@@ -16,6 +16,7 @@ Hint: Your network might work better if you scale the house price down.
 You don't have to give the answer 400...it might be better to create 
 something that predicts the number 4, and then your answer is in the 
 'hundreds of thousands' etc.
+
 """
 
 import tensorflow as tf
@@ -50,5 +51,6 @@ model = house_model()
 new_y = 7.0
 prediction = model.predict([new_y])[0]
 print(prediction)
+print("A {} bedroom house will cost about {}k".format(new_y, prediction[0] * 100))
 
 # Expected output: a value very close to 4.0
